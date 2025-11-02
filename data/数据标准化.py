@@ -34,9 +34,9 @@ def build_new_field(row, columns):
 hospital_columns = ['医院_伤害表现', '医院_器械故障表现', '医院_使用过程']
 df.insert(df.columns.get_loc('医院_伤害') + 1, '医院_伤害_input', df.apply(lambda row: build_new_field(row, hospital_columns), axis=1))
 
-# 在企业_伤害表现列后添加新列企业_伤害_input
+# 在企业_伤害列后添加新列企业_伤害_input
 enterprise_columns = ['企业_伤害表现', '企业_器械故障表现', '企业_使用过程']
-df.insert(df.columns.get_loc('企业_伤害表现') + 1, '企业_伤害_input', df.apply(lambda row: build_new_field(row, enterprise_columns), axis=1))
+df.insert(df.columns.get_loc('企业_伤害') + 1, '企业_伤害_input', df.apply(lambda row: build_new_field(row, enterprise_columns), axis=1))
 
 # 将结果保存为 CSV 文件
 csv_path = 'sample.csv'
